@@ -16,20 +16,23 @@ dirEntry = Entry(window, textvariable=entryVar, width=30)
 dirEntry.grid(column=0, row=1, padx=20, pady=5, sticky=tk.W, ipady=5)
 dirEntry.configure(font=('Courier', 15))
 
+
 def get_input():
     directory = entryVar.get()
     directory = Path(directory)
     print(Path.is_dir(directory))
-    
+
 
 Button(window, width=20, text='Sort', command=get_input).grid(column=1, row=1, ipady=5)
 
-# file extentions to be sorted 
-file_ext = ['.txt', '.pdf', '.jpg', '.png', '.mp3', '.mp4', '.mkv', '.cdr',  '.docx', '.ai', 'psd', '.py', '.html', '.js', '.svg', '.css', '.java', '.json']
+# file extentions to be sorted
+file_ext = ['.txt', '.pdf', '.jpg', '.png', '.mp3', '.mp4', '.mkv', '.cdr',
+            '.docx', '.ai', 'psd', '.py', '.html', '.js', '.svg', '.css', '.java', '.json']
 
 
 chk_frame = LabelFrame(window, text=' specify file extentions ', width=100)
 chk_frame.grid(column=0, row=2, sticky=tk.W, padx=20, columnspan=2)
+
 
 def check():
     isCheck = fileVal.get()
